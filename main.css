@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+
+:root{
+    
+    --background-color: #ffffff;
+    --section-background-color: #F7F8FC;
+    --text-color: #565973;
+    --muted-text-color: #9397AD;
+    --headline-color: #0B0F19;
+    --border-color: #E2E5F1;
+    --button-color: #6366F1;
+    --link-color: #6366F1;
+    --green-link-color: #2CD9A1;
+}
+
+
+html, body {
+    background-color: var(--background-color);
+    color:var(--text-color);
+}
+
+h1{
+    color: var(--headline-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100dvh;
+}
+
+.container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    @media(width >= 768px)
+    {
+        width: 720px;
+    }
+
+    @media(width >= 1400px)
+    {
+        width: 1320px;
+    }
+}
+
+header{
+    .container{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "logo darkmode hamburger";
+
+        @media(width >= 1400px){
+            grid-template-columns: auto 1fr auto auto;
+            grid-template-areas: "logo nav darkmode account";
+        }
+    }
+
+    .logo{
+        grid-area: logo;
+        display:flex;
+        align-items:center;
+        gap:0.5rem;
+        color: var(--headline-color);
+        
+    }
+
+    .main-nav{
+        grid-area: nav;
+        display: none;
+
+        @media(width >= 1400px){
+            display:block;
+        }
+    }
+
+    .darkmode{
+        grid-area: darkmode;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .account{
+        grid-area: account;
+        display: none;
+
+        @media(width >= 1400px){
+            display:block;
+        }
+    }
+
+    .hamburger{
+        grid-area: hamburger;
+        display: block;  
+
+        @media (width >= 1400px){
+            display: none;
+        }
+    }
+}
+
+footer{
+    font-family: "Manrope";
+    font-size: 14px;
+    font-weight: 400px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 75px 0;
+    text-align: center;
+    color: var(--muted-text-color);
+}
+
+
+.button{
+    background-color: blueviolet;
+    color: black;
+    padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: violet;
+}
+
+
+[data-theme="dark"]{
+    --background-color: black;
+    --text-color: white;
+    --headline-color: white;
+    --button-color: pink;
+}
