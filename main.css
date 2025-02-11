@@ -9,7 +9,11 @@
     --muted-text-color: #9397AD;
     --headline-color: #0B0F19;
     --border-color: #E2E5F1;
+
+
     --button-color: #6366F1;
+
+
     --link-color: #6366F1;
     --green-link-color: #2CD9A1;
 }
@@ -18,15 +22,17 @@
 html, body {
     background-color: var(--background-color);
     color:var(--text-color);
+    
+    font-family: "Manrope";
 }
 
-h1{
+
+h1,h2,h3,h4,h5{
     color: var(--headline-color);
-    font-size: 2rem;
+    font-family: "Manrope";
     font-weight: 700;
-    margin: 0;
-    padding: 0;
 }
+
 
 .wrapper{
     display: grid;
@@ -53,12 +59,21 @@ h1{
     }
 }
 
+
+
 header{
     .container{
+        padding: 10px;
         display: grid;
         gap: 2rem;
-        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        grid-template-columns: 1fr auto auto;
         grid-template-areas: "logo darkmode hamburger";
+
+        @media(width >= 768px){
+            grid-template-columns: 1fr auto auto;
+            grid-template-areas: "logo darkmode hamburger";
+        }
 
         @media(width >= 1400px){
             grid-template-columns: auto 1fr auto auto;
@@ -66,41 +81,62 @@ header{
         }
     }
 
+
     .logo{
         grid-area: logo;
         display:flex;
         align-items:center;
         gap:0.5rem;
         color: var(--headline-color);
-        
+        font-size: 900;
     }
+
 
     .main-nav{
         grid-area: nav;
         display: none;
 
+        align-items: center;
+        gap: 0.5rem;
+
         @media(width >= 1400px){
-            display:block;
+            display:flex;
         }
     }
+
 
     .darkmode{
         grid-area: darkmode;
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 0.5rem;
+        
+        .switch-text{
+            display: none;
+
+            @media(width >= 768px){
+                display: flex;
+            }
+        }
     }
 
-    .account{
+
+    .account-button {
         grid-area: account;
         display: none;
+
+        .person{
+            
+        }
 
         @media(width >= 1400px){
             display:block;
         }
     }
 
-    .hamburger{
+
+    .hamburger-button{
         grid-area: hamburger;
         display: block;  
 
@@ -110,11 +146,12 @@ header{
     }
 }
 
+
+
 footer{
     font-family: "Manrope";
     font-size: 14px;
     font-weight: 400px;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -124,21 +161,187 @@ footer{
 }
 
 
+button{
+    border-color: transparent;
+    background-color: transparent;
+
+}
+
+
 .button{
-    background-color: blueviolet;
-    color: black;
+    background-color: var(--button-color);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
     padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 12px;
-  transition-duration: 0.4s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    transition-duration: 0.4s;
 }
 
 .button:hover{
     background-color: violet;
 }
+
+
+
+.brands{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .brand{
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        height: 100px;
+        width: 196px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    @media (width >= 768px){
+        display: flex;
+        flex-direction: column;
+
+        @media (width >= 1400px){
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+
+
+#brand-section{
+    padding: 4rem 0;
+}
+
+
+section{
+
+}
+
+
+.image-slider{
+
+}
+
+
+
+#how-does-it-work-section{
+
+    background-color: aliceblue;
+
+    .section-title{
+        h2{
+
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .section-body{
+        h3{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+#money-transfer-section{
+    padding: 4rem 0;
+
+    .container{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "column column";
+
+
+        .column{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+
+            .content{
+                width:60%;
+            }
+        }
+    }
+
+    .section-title{
+        h2{
+            font-size: 24px;
+        }
+    }
+
+    .section-body{
+        ul{
+            li{
+
+            }
+        }
+    }
+}
+
+
+.arrow{
+    size: 1rem;
+}
+
+
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 46px;
+	height: 24px;
+	background: #9397AD;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--button-color);
+}
+
+input:checked + label:after {
+	left: calc(100% - 2px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 30px;
+}
+
 
 
 [data-theme="dark"]{
