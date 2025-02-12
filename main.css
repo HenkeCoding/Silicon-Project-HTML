@@ -2,9 +2,8 @@
 
 
 :root{
-    
     --background-color: #ffffff;
-    --section-background-color: #F7F8FC;
+    --section-background-color: #F3F6FF;
     --text-color: #565973;
     --muted-text-color: #9397AD;
     --headline-color: #0B0F19;
@@ -12,10 +11,18 @@
 
 
     --button-color: #6366F1;
-
-
     --link-color: #6366F1;
     --green-link-color: #2CD9A1;
+}
+
+
+[data-theme="dark"]{
+    --background-color: #0B0F19;
+    --section-background-color: #080032;
+    --text-color: #ffffff;
+    --headline-color: white;
+    --button-color: pink;
+
 }
 
 
@@ -30,8 +37,55 @@ html, body {
 h1,h2,h3,h4,h5{
     color: var(--headline-color);
     font-family: "Manrope";
-    font-weight: 700;
 }
+
+h1{
+    font-weight: 800;
+    font-size: 56px;
+}
+
+h2{
+    font-weight: 800;
+    font-size: 40px;
+}
+
+h3{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+h4{
+    font-weight: 800;
+    font-size: 24px;
+}
+
+h5{
+    font-weight: 800;
+    font-size: 32px;
+}
+
+
+p{
+    font-family: "Manrope";
+    font-weight: 400;
+    font-size: 18px;
+    color:var(--text-color)
+}
+
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+
+    transition: all 0.15s ease-in-ease-out;
+
+    &:hover{
+        text-decoration: underline;
+        transition: all 0.15s ease-in-ease-out;
+    }
+}
+
+
 
 
 .wrapper{
@@ -127,7 +181,7 @@ header{
         display: none;
 
         .person{
-            
+
         }
 
         @media(width >= 1400px){
@@ -164,7 +218,7 @@ footer{
 button{
     border-color: transparent;
     background-color: transparent;
-
+    cursor:pointer;
 }
 
 
@@ -187,77 +241,178 @@ button{
 
 
 
-.brands{
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-
-
-    .brand{
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        height: 100px;
-        width: 196px;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-    
-    @media (width >= 768px){
-        display: flex;
-        flex-direction: column;
-
-        @media (width >= 1400px){
-            display: flex;
-            flex-direction: row;
-        }
-    }
-}
-
-
-
-#brand-section{
-    padding: 4rem 0;
-}
-
 
 section{
 
 }
 
+#manage-section{
+    display:flex;
+    text-align: center;
 
-.image-slider{
+    .phones1{
+        display:none;
+        height: 688px;
+        width: 736px;
 
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        @media(width >= 768px){
+            display: flex;
+        }
+    }
+
+    @media(width >= 768px){
+        text-align: left;
+    }
 }
+
+
+
+#features-section{
+    padding: 0 0;
+    height: auto;
+
+
+    @media(width >= 768px){
+        padding: 100px 0;
+    }
+
+
+    .brands{
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+    
+    
+        .brand{
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            height: 100px;
+            width: 196px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        
+        @media (width >= 768px){
+            display: flex;
+            flex-flow: row wrap;
+    
+            @media (width >= 1400px){
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+
+
+    .features-body{
+        gap: 190px;
+        display:flex;
+
+        @media(width >= 768px){
+            padding: 110px 0;
+        }
+
+        
+    }
+
+
+
+    .features-phone{
+        display:none;
+
+        @media(width >= 1400px){
+            display: flex;
+        }
+    }
+
+
+
+    .features-info{
+        display:flex;
+        flex-direction: column;
+    }
+
+
+    .features-title{
+        text-align: center;
+        @media(width >= 768px){
+            text-align: left;
+        }
+    }
+
+
+    .features-table{
+        display: flex;
+        flex-flow: row wrap;
+        
+        p{
+            font-size: 16px;
+            color:var(--text-color)
+        }
+
+        justify-content: center;
+        align-items: center;
+
+        @media(width >= 768px){
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+
+    .feature{
+        display:flex;
+        flex-flow: row wrap;
+    }
+
+    .feature-text{
+        display:flex;
+        flex-flow: column wrap;
+        width:261px;
+
+
+        p{
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+}
+
 
 
 
 #how-does-it-work-section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    background-color: var(--section-background-color);
+    text-align: center;
+    
 
-    background-color: aliceblue;
-
-    .section-title{
-        h2{
-
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+    .image-slider{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
     }
 
-    .section-body{
-        h3{
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+
+
+    p{
+        font-size:16px;
     }
 }
 
 
+
 #money-transfer-section{
     padding: 4rem 0;
+    display:none;
 
     .container{
         display: grid;
@@ -291,7 +446,39 @@ section{
             }
         }
     }
+
+    @media(width >= 768px){
+        display:flex;
+    }
 }
+
+
+
+#clients-section{
+    display:none;
+    background-color: var(--section-background-color);
+    padding: 100px 0;
+
+    @media(width >= 768px){
+        display:flex;
+    }
+}
+
+.subscribe-bar{
+    background-color: var(--section-background-color);
+    padding: 100px 0;
+    display: grid;
+    
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .subscribe-form{
+        display:flex;
+        gap: 1rem;
+    }
+}
+
 
 
 .arrow{
@@ -344,9 +531,3 @@ label:active:after {
 
 
 
-[data-theme="dark"]{
-    --background-color: black;
-    --text-color: white;
-    --headline-color: white;
-    --button-color: pink;
-}
