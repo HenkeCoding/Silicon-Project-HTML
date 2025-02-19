@@ -20,3 +20,26 @@ const toggleThemeMode = () => {
         localStorage.setItem('theme', 'dark')
     }
 }
+
+
+
+document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if(e.target[email].value === "") {
+        alert('Please enter your email address')
+        return;
+    }
+
+    const emailrequest = {
+        email: e.target[email].value
+    }
+
+
+
+    let email = document.getElementById('email').value;
+    console.log(email);
+    document.getElementById('email').value = '';
+    alert('Thank you for subscribing')
+})
+

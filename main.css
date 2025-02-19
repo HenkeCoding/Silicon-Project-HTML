@@ -21,8 +21,8 @@
     --section-background-color: #080032;
     --text-color: #ffffff;
     --headline-color: white;
-    --button-color: pink;
 
+    
 }
 
 
@@ -62,6 +62,8 @@ h4{
 h5{
     font-weight: 800;
     font-size: 32px;
+    margin: 0px;
+    margin-bottom: 20px;
 }
 
 
@@ -84,6 +86,7 @@ a{
         transition: all 0.15s ease-in-ease-out;
     }
 }
+
 
 
 
@@ -194,9 +197,22 @@ header{
         grid-area: hamburger;
         display: block;  
 
+        
+
+
+        transition: background-color 0.15s ease-in-ease-out, border 0,15s ease-in-ease-out, color 0.15s ease-in-ease-out;
+        border: 1px solid transparent;
+
+
+        &:hover{
+            border: 1px solid var(--border-color);    
+        }
+        
+
         @media (width >= 1400px){
             display: none;
         }
+
     }
 }
 
@@ -216,15 +232,20 @@ footer{
 
 
 button{
+    size: 5rem;
     border-color: transparent;
     background-color: transparent;
     cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
-.button{
-    background-color: var(--button-color);
+.btn{
     color: #ffffff;
+    background-color: var(--button-color);
     font-weight: 600;
     font-size: 14px;
     padding: 15px 32px;
@@ -233,22 +254,50 @@ button{
     display: inline-block;
     border-radius: 4px;
     transition-duration: 0.4s;
+
+    gap:0.5rem;
+
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+    i{
+        margin-left:1px;
+
+        img{
+            color: #ffffff;
+            fill: #ffffff;
+        }
+    }
 }
 
-.button:hover{
+
+
+.btn:hover{
     background-color: violet;
 }
 
-
-
-
-section{
-
+.person{
+    color: #ffffff;
 }
+
+.right-arrow{
+    color: #ffffff;
+}
+
+
+
+
 
 #manage-section{
     display:flex;
     text-align: center;
+    background: rgb(99,102,241);
+    background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 82%, rgba(255,255,255,0) 100%);
+
+
 
     .phones1{
         display:none;
@@ -278,6 +327,26 @@ section{
     @media(width >= 768px){
         padding: 100px 0;
     }
+
+
+    h2, h3, p{
+        margin: 0px;
+        gap: 50px;
+    }
+
+    h2{
+        margin-bottom: 20px;
+    }
+
+    p{
+        margin-bottom: 40px;
+        line-height: 1.5;
+    }
+
+    h3{
+        margin-bottom: 10px;
+    }
+
 
 
     .brands{
@@ -346,9 +415,11 @@ section{
     }
 
 
+
     .features-table{
         display: flex;
         flex-flow: row wrap;
+        gap: 30px;
         
         p{
             font-size: 16px;
@@ -365,10 +436,14 @@ section{
     }
 
 
+
     .feature{
         display:flex;
         flex-flow: row wrap;
+        align-items: start;
+        gap: 20px;
     }
+
 
     .feature-text{
         display:flex;
@@ -406,6 +481,14 @@ section{
     p{
         font-size:16px;
     }
+
+
+    #image-slide1, #image-slide3{
+        display:none;
+        @media(width >= 768px){
+            display: flex;
+        }
+    }
 }
 
 
@@ -414,9 +497,12 @@ section{
     padding: 4rem 0;
     display:none;
 
+
+
     .container{
         display: grid;
         gap: 2rem;
+        row-gap: 8rem;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "column column";
 
@@ -433,19 +519,104 @@ section{
         }
     }
 
-    .section-title{
-        h2{
-            font-size: 24px;
-        }
-    }
 
     .section-body{
+        display:grid;
+        gap: 2rem;
+
+        img{
+            color: var(--button-color)
+        }
+
+
         ul{
             li{
 
             }
         }
     }
+
+    
+    .checklist{
+        margin:0;
+        padding:0;
+        list-style: none;
+
+        li{
+            display:flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            p{
+
+            }
+        }
+    }
+
+
+    .image-container{
+        display:none;
+        position:relative;
+
+
+
+        @media(width >= 768px){
+            display: grid;
+        }
+
+        #moneytransferA2{
+            position: absolute;
+            right: -40px;
+            bottom: -50px;
+        }
+
+        #moneytransferB2{
+            position: absolute;
+            right: -50px;
+            bottom: 50px;
+        }
+    }
+
+
+    .content{
+
+    }
+
+
+    .column{
+        display:flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .features{
+        display: flex;
+
+        .feature{
+            
+        }
+
+
+    }
+
+
+    .learn-more-button{
+        display:flex;
+        align-self: flex-start;
+    }
+
+    .btn{
+        min-width: 200px;
+        min-height: 50px;
+
+        height: 38px;
+        width: 159px;
+    }
+
+
 
     @media(width >= 768px){
         display:flex;
@@ -464,20 +635,92 @@ section{
     }
 }
 
-.subscribe-bar{
-    background-color: var(--section-background-color);
-    padding: 100px 0;
-    display: grid;
-    
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
 
-    .subscribe-form{
-        display:flex;
-        gap: 1rem;
+
+
+.subscribe-bar{
+    .container{
+        background-color: var(--section-background-color);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+
+
+    .content-container{
+        display:grid;
+        grid-template-columns: auto 500px;
+        align-items: center;
+        gap: 2rem;
+
+        
+
+        span{
+            display:none;
+
+            @media(width >= 768px){
+                display: inline;
+            }
+        }
+    }
+
+
+    .form-container{
+        flex: 0.7;
+
+        #subscribe-form{
+            display:flex;
+            
+
+            .input-container{
+                position:relative;
+
+                img{
+                    position: absolute;
+                    top: 18px;
+                    left: 12px;
+                }
+            }
+
+            .btn{
+                position:relative;
+
+            }
+        }
+    }
+
+}
+
+
+
+form{
+    input{
+        border-radius: 8px 0 0 8px;
+        border: solid var(--border-color);
+        border-width: 1px 0 1px 1px;
+        outline: none;
+        padding: 1rem 2rem;
+        font-size: 1em;
+        width: 100%;
+
+    }
+
+    .btn{
+        border-radius: 0 8px 8px 0;
+        border: none;
+        outline: none;
+        padding: 1rem 2rem;
+        font-size: 1em;
+        color: #ffffff;
+
     }
 }
+
+
+
 
 
 
