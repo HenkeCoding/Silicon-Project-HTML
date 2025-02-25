@@ -6,6 +6,9 @@ const toggleThemeMode = () => {
 
     let themeMode = localStorage.getItem('theme');
     let logoImage = document.getElementById('logo-image');
+    let appStoreImage = document.getElementById('app-store-image');
+    let googlePlayImage = document.getElementById('google-play-image');
+    
  
     if (themeMode === 'dark') 
     {
