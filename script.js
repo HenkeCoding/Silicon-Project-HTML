@@ -12,13 +12,17 @@ const toggleThemeMode = () => {
  
     if (themeMode === 'dark') 
     {
-        /*logoImage.src = "images/log.png";*/
+        /*logoImage.src = "images/logo-light.png";*/
+        appStoreImage.src = "images/appstore-light.svg"
+        googlePlayImage.src = "images/googleplay-light.svg"
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light')
-    } 
-    else 
+    }
+    else
     {
         /*logoImage.src = "images/logo-dark.png";*/
+        appStoreImage.src = "images/appstore-dark.svg"
+        googlePlayImage.src = "images/googleplay-dark.svg"
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark')
     }

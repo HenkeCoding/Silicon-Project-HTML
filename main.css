@@ -16,6 +16,7 @@
     --green-link-color: #2CD9A1;
 
     --store-button-color: #131022;
+    --hamburger-color: #3E4265;
 }
 
 
@@ -27,6 +28,7 @@
 
     --store-button-color: #EFF2FC;
     --dark-text-color: #ffffff;
+    --hamburger-color: #ffffff;
 }
 
 
@@ -39,9 +41,7 @@ body {
     color: var(--text-color);
 
     font-family: "Manrope";
-
     font-style: normal;
-
 }
 
 
@@ -49,9 +49,12 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+li {
     color: var(--headline-color);
     font-family: "Manrope";
+    font-style: normal;
+
     margin: 0px;
 }
 
@@ -103,7 +106,9 @@ a {
 }
 
 
-
+ul{
+    padding:0px;
+}
 
 
 .wrapper {
@@ -112,8 +117,9 @@ a {
     grid-template-rows: auto 1fr auto;
 }
 
+
 .container {
-    width: 100%;
+    width: 390px;
     padding-left: 1rem;
     padding-right: 1rem;
 
@@ -130,12 +136,15 @@ a {
 }
 
 
-
 header {
     .container {
-        padding: 2rem 2rem;
+        margin: 1rem 0;
+
+        margin-left: auto;
+        margin-right: auto;
+
         display: grid;
-        gap: 3rem;
+        gap: 1rem;
         align-items: center;
         grid-template-columns: 1fr auto auto;
         grid-template-areas: "logo darkmode hamburger";
@@ -160,8 +169,6 @@ header {
         color: var(--dark-text-color);
         font-weight: 900;
         font-size: 21.4px;
-        
-        
     }
 
 
@@ -223,14 +230,9 @@ header {
         grid-area: hamburger;
         display: block;
 
-        width: 50px;
-        height: 50px;
 
         transition: background-color 0.15s ease-in-ease-out, border 0, 15s ease-in-ease-out, color 0.15s ease-in-ease-out;
         border: 1px solid transparent;
-
-        color: #3E4265;
-        font-size: 2rem;
 
         &:hover {
             border: 1px solid var(--border-color);
@@ -240,6 +242,10 @@ header {
             display: none;
         }
 
+        .hamburger-icon{
+            color: var(--hamburger-color);
+            font-size: 2rem;
+        }
     }
 }
 
@@ -275,6 +281,7 @@ button {
 }
 
 
+
 .purple-button {
     color: #ffffff;
     background-color: var(--purple-button-color);
@@ -306,26 +313,16 @@ button {
 }
 
 
-.person {
-    color: #ffffff;
-}
 
-.right-arrow {
-    color: #ffffff;
-}
-
-
-
-
-
-#manage-section {
+#hero-section {
     margin-top: 40px;
 
     .container {
         display: grid;
         grid-template-areas: "headline" "content";
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: 1fr auto;
+
 
 
         @media(width >=768px) {
@@ -335,6 +332,7 @@ button {
 
         @media(width >=1400px) {
             grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
             grid-template-areas: "headline image" "content image";
         }
     }
@@ -348,28 +346,47 @@ button {
     h1 {
         width: auto;
         height: auto;
+        
         grid-area: headline;
+
         text-align: center;
-        margin: 40px 0;
+        margin: 0;
+        margin-bottom: 20px;
 
         font-size: 34.1px;
 
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 298px;
+        height: 88px;
+
         @media(width >= 768px){
+            margin-bottom: 0;
+
             font-size: 44.3px;
+
+            width: 442px;
+            height: 143px;
         }
+
 
         @media(width >= 1400px){
+            width: 526px;
+            height: 146px;
+
             font-size: 56px;
             text-align: left;
+
+            margin-left: 0;
         }
-
-
     }
 
 
     .manage-content {
-        margin-top: 80px;
         grid-area: content;
+
+        margin-top: 0px;
         width: auto;
         height: auto;
         display: grid;
@@ -377,7 +394,13 @@ button {
         gap: 1rem;
 
         @media(width >= 768px){
+            margin-top: 80px;
+
             text-align: left;
+        }
+
+        @media(width >= 1400px){
+            margin-top: 0px;
         }
 
     }
@@ -387,19 +410,31 @@ button {
     }
 
     .store-buttons {
-        display: flex;
-        flex-flow: row nowrap;
+        display:grid;
         gap: 1rem;
+
+        @media(width >= 1400px){
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 1rem;
+        }
+        
     }
 
 
     .store-button {
         background-color: var(--store-button-color);
         border-radius: 8px;
-        padding: 1rem 2rem;
+        
+        width: 366px;
+        height: 50px;
+        
+        margin-left: auto;
+        margin-right: auto;
 
-        display: flex;
-        flex-flow: row nowrap;
+        @media(width >= 768px){
+
+        }
     }
 
 
@@ -410,6 +445,10 @@ button {
         flex-flow: row nowrap;
 
         justify-content: flex-start;
+
+        
+        margin-left: auto;
+        margin-right: auto;
 
         img {
             display: flex;
@@ -434,11 +473,18 @@ button {
             justify-content: center;
             gap: 0.5rem;
         }
+
+
+        @media(width >= 768px){
+            margin-left: 0;
+        }
     }
+
 
 
     .phones1 {
         grid-area: image;
+
         display: none;
         align-items: center;
         justify-content: center;
@@ -875,7 +921,7 @@ button {
         padding: 100px 0;
 
         display: grid;
-        gap: 3rem;
+        gap: 3rem 0;
 
         grid-template-columns: 1fr auto;
         grid-template-areas: "content" "questions" "button";
@@ -912,6 +958,14 @@ button {
     h5 {
         width: 320px;
         height: auto;
+
+
+        margin-left: auto;
+        margin-right: auto;
+
+        @media(width >= 768px){
+            margin: 0;
+        }
     }
     
 
